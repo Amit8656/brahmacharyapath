@@ -4,8 +4,133 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Brahmacharya Path</title>
-  <link rel="stylesheet" href="style.css"/>
+
+  <style>
+    body {
+      font-family: 'Segoe UI', sans-serif;
+      margin: 0;
+      padding: 0;
+      background: #f9f9f9;
+    }
+
+    /* Navbar */
+    .navbar {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      background-color: #3c3c9e;
+      padding: 10px 20px;
+      color: white;
+    }
+
+    .navbar ul {
+      list-style: none;
+      display: flex;
+      gap: 15px;
+      margin: 0;
+    }
+
+    .navbar a {
+      color: white;
+      text-decoration: none;
+    }
+
+    /* Slider */
+    .slider {
+      width: 100%;
+      height: 300px;
+      overflow: hidden;
+      position: relative;
+    }
+
+    .slider img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: none;
+    }
+
+    /* Krishna side image */
+    .krishna-side-img {
+      position: fixed;
+      bottom: 20px;
+      right: 20px;
+      width: 100px;
+      height: auto;
+      border-radius: 50%;
+      box-shadow: 0 0 10px rgba(0,0,0,0.3);
+      z-index: 1000;
+    }
+
+    /* Search */
+    .search-container {
+      padding: 20px;
+      text-align: center;
+    }
+
+    .search-container input {
+      width: 80%;
+      padding: 10px;
+      font-size: 16px;
+      border: 1px solid #ccc;
+      border-radius: 8px;
+    }
+
+    /* Thought Cards */
+    .thoughts {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 20px;
+      padding: 20px;
+    }
+
+    .card {
+      background: white;
+      padding: 20px;
+      max-width: 300px;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+      border-radius: 10px;
+    }
+
+    /* About Section */
+    .about {
+      padding: 30px;
+      background: #fff;
+      text-align: center;
+    }
+
+    /* Footer */
+    footer {
+      background-color: #3c3c9e;
+      color: white;
+      text-align: center;
+      padding: 15px;
+      margin-top: 40px;
+    }
+
+    /* Responsive */
+    @media screen and (max-width: 600px) {
+      .thoughts {
+        flex-direction: column;
+        align-items: center;
+      }
+
+      .navbar {
+        flex-direction: column;
+      }
+
+      .search-container input {
+        width: 95%;
+      }
+
+      .krishna-side-img {
+        width: 70px;
+      }
+    }
+  </style>
 </head>
+
 <body>
 
   <!-- Navbar -->
@@ -57,6 +182,9 @@
     <p>&copy; 2025 Brahmacharya Path | Designed by Amit</p>
   </footer>
 
+  <!-- Krishna ji ki chhoti image -->
+  <img class="krishna-side-img" src="images/krishna-small.jpg" alt="Shree Krishna">
+
   <!-- JavaScript for slider and search -->
   <script>
     // Slider
@@ -82,120 +210,3 @@
 
 </body>
 </html>
-body {
-  font-family: 'Segoe UI', sans-serif;
-  margin: 0;
-  padding: 0;
-  background: #f9f9f9;
-}
-
-/* Navbar */
-.navbar {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  background-color: #3c3c9e;
-  padding: 10px 20px;
-  color: white;
-}
-
-.navbar ul {
-  list-style: none;
-  display: flex;
-  gap: 15px;
-  margin: 0;
-}
-
-.navbar li {
-  padding: 0;
-}
-
-.navbar a {
-  color: white;
-  text-decoration: none;
-}
-
-/* Slider */
-.slider {
-  width: 100%;
-  max-height: 300px;
-  overflow: hidden;
-  position: relative;
-}
-
-.slider img {
-  width: 100%;
-  display: none;
-}
-
-/* Search */
-.search-container {
-  padding: 20px;
-  text-align: center;
-}
-
-.search-container input {
-  width: 80%;
-  padding: 10px;
-  font-size: 16px;
-  border: 1px solid #ccc;
-  border-radius: 8px;
-}
-
-/* Thought Cards */
-.thoughts {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  gap: 20px;
-  padding: 20px;
-}
-
-.card {
-  background: white;
-  padding: 20px;
-  max-width: 300px;
-  box-shadow: 0 4px 8px rgba(0,0,0,0.2);
-  border-radius: 10px;
-  transition: transform 0.3s ease;
-}
-
-.card:hover {
-  transform: translateY(-5px);
-}
-
-/* About Section */
-.about {
-  padding: 30px;
-  background: #fff;
-  text-align: center;
-}
-
-.about h2 {
-  color: #3c3c9e;
-}
-
-/* Footer */
-footer {
-  background-color: #3c3c9e;
-  color: white;
-  text-align: center;
-  padding: 15px;
-  margin-top: 40px;
-}
-
-/* Responsive */
-@media screen and (max-width: 600px) {
-  .thoughts {
-    flex-direction: column;
-    align-items: center;
-  }
-
-  .navbar {
-    flex-direction: column;
-  }
-
-  .search-container input {
-    width: 95%;
-  }
-}
