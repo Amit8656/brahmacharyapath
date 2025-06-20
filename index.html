@@ -30,7 +30,6 @@
       background: #f9f9f9;
     }
 
-    /* Navbar */
     .navbar {
       display: flex;
       justify-content: space-between;
@@ -52,22 +51,23 @@
       text-decoration: none;
     }
 
-    /* Slider */
+    /* ✅ Updated Slider CSS */
     .slider {
       width: 100%;
-      height: 300px;
+      height: auto;
+      max-height: 350px;
       overflow: hidden;
       position: relative;
+      background: #000;
     }
 
     .slider img {
       width: 100%;
-      height: 100%;
-      object-fit: cover;
+      height: auto;
+      object-fit: contain;
       display: none;
     }
 
-    /* Krishna side image */
     .krishna-side-img {
       position: fixed;
       bottom: 20px;
@@ -79,7 +79,6 @@
       z-index: 1000;
     }
 
-    /* Search */
     .search-container {
       padding: 20px;
       text-align: center;
@@ -93,7 +92,6 @@
       border-radius: 8px;
     }
 
-    /* Thought Cards */
     .thoughts {
       display: flex;
       flex-wrap: wrap;
@@ -110,14 +108,12 @@
       border-radius: 10px;
     }
 
-    /* About Section */
     .about {
       padding: 30px;
       background: #fff;
       text-align: center;
     }
 
-    /* Footer */
     footer {
       background-color: #3c3c9e;
       color: white;
@@ -126,7 +122,6 @@
       margin-top: 40px;
     }
 
-    /* Responsive */
     @media screen and (max-width: 600px) {
       .thoughts {
         flex-direction: column;
@@ -160,11 +155,13 @@
     </ul>
   </nav>
 
-  <!-- Slider -->
+  <!-- ✅ Slider with 5 new images -->
   <div class="slider">
-    <img src="images/https://raw.githubusercontent.com/Amit8656/brahmacharyapath/refs/heads/main/images/IMG_20250620_095335.jpg
-    <img src="images/https://raw.githubusercontent.com/Amit8656/brahmacharyapath/refs/heads/main/images/IMG_20250620_095319.jpg
-    <img src="images/https://raw.githubusercontent.com/Amit8656/brahmacharyapath/refs/heads/main/images/IMG_20250620_095256.jpg
+    <img src="https://raw.githubusercontent.com/Amit8656/brahmacharyapath/refs/heads/main/images/IMG_20250620_095335.jpg" class="slide" alt="Krishna 1">
+    <img src="https://raw.githubusercontent.com/Amit8656/brahmacharyapath/refs/heads/main/images/IMG_20250620_095319.jpg" class="slide" alt="Krishna 2">
+    <img src="https://raw.githubusercontent.com/Amit8656/brahmacharyapath/refs/heads/main/images/IMG_20250620_095256.jpg" class="slide" alt="Krishna 3">
+    <img src="https://raw.githubusercontent.com/Amit8656/brahmacharyapath/refs/heads/main/images/IMG_20250620_095205.jpg" class="slide" alt="Krishna 4">
+    <img src="https://raw.githubusercontent.com/Amit8656/brahmacharyapath/refs/heads/main/images/IMG_20250620_095114.jpg" class="slide" alt="Krishna 5">
   </div>
 
   <!-- Search Box -->
@@ -199,12 +196,11 @@
     <p>&copy; 2025 Brahmacharya Path | Designed by Amit</p>
   </footer>
 
-  <!-- Krishna ji ki chhoti image -->
-  <img class="https://raw.githubusercontent.com/Amit8656/brahmacharyapath/refs/heads/main/images/IMG_20250620_095205.jpg
+  <!-- Krishna side image -->
+  <img class="krishna-side-img" src="images/krishna-small.jpg" alt="Shree Krishna">
 
-  <!-- JavaScript for slider and search -->
+  <!-- JS for Slider & Search -->
   <script>
-    // Slider
     let slides = document.querySelectorAll('.slide');
     let index = 0;
     setInterval(() => {
@@ -214,7 +210,6 @@
       index = (index + 1) % slides.length;
     }, 3000);
 
-    // Search
     document.getElementById("searchBox").addEventListener("input", function () {
       const query = this.value.toLowerCase();
       const cards = document.querySelectorAll(".card");
