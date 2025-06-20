@@ -1,154 +1,243 @@
 <!DOCTYPE html>
 <html lang="hi">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Brahmacharya Path</title>
   <style>
-    :root {
-      --primary: #3c3c9e;
-      --secondary: #2c2c8e;
-      --text: #333;
-      --light: #f9f9f9;
-    }
-    
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-    }
-    
     body {
       font-family: 'Segoe UI', sans-serif;
-      color: var(--text);
-      line-height: 1.6;
-    }
-    
-    /* फुल स्क्रीन इमेज स्टाइल */
-    .hero-image {
-      width: 100%;
-      height: 100vh;
-      background-image: url('https://raw.githubusercontent.com/Amit8656/brahmacharyapath/main/images/IMG_20250620_095335.jpg');
-      background-size: cover;
-      background-position: center;
-      background-repeat: no-repeat;
-      display: flex;
-      flex-direction: column;
-      justify-content: space-between;
-    }
-    
-    .header {
-      background: rgba(0,0,0,0.7);
-      color: white;
-      padding: 1rem;
-      text-align: center;
-    }
-    
-    .header h1 {
       margin: 0;
-      font-size: 2rem;
+      padding: 0;
+      background: #f9f9f9;
     }
-    
-    .header .domain {
-      font-size: 1rem;
-      opacity: 0.8;
-    }
-    
-    .content-overlay {
-      background: rgba(0,0,0,0.7);
+
+    .navbar {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      background-color: #3c3c9e;
+      padding: 10px 20px;
       color: white;
-      padding: 2rem;
-      margin-bottom: 2rem;
     }
-    
-    .container {
-      max-width: 1000px;
-      margin: 0 auto;
-      padding: 0 1rem;
+
+    .navbar ul {
+      list-style: none;
+      display: flex;
+      gap: 15px;
+      margin: 0;
     }
-    
-    .section {
-      background: rgba(255,255,255,0.9);
-      border-radius: 10px;
-      padding: 2rem;
-      margin-bottom: 2rem;
+
+    .navbar a {
+      color: white;
+      text-decoration: none;
     }
-    
-    .section h2 {
-      color: var(--primary);
-      margin-top: 0;
-      border-bottom: 2px solid var(--primary);
-      padding-bottom: 0.5rem;
-    }
-    
-    .points-list {
-      padding-left: 1.5rem;
-      margin-top: 1rem;
-    }
-    
-    .points-list li {
-      margin-bottom: 0.8rem;
+
+    /* Improved Slider CSS */
+    .slider {
+      width: 100%;
+      height: 350px;
+      overflow: hidden;
       position: relative;
+      background: #000;
+      display: flex;
+      align-items: center;
+      justify-content: center;
     }
-    
-    .points-list li::before {
-      content: "•";
-      color: var(--primary);
-      font-weight: bold;
-      display: inline-block;
-      width: 1em;
-      margin-left: -1em;
+
+    .slider img {
+      max-width: 100%;
+      max-height: 100%;
+      width: auto;
+      height: auto;
+      object-fit: contain;
+      display: none;
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
     }
-    
-    .footer {
+
+    .slider {
+  width: 100%;
+  height: 350px;
+  overflow: hidden;
+  position: relative;
+  background: #000;
+}
+
+.slider img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover; /* 👈 ye main part hai */
+  display: none;
+}
+    }
+
+    .krishna-side-img {
+      position: fixed;
+      bottom: 20px;
+      right: 20px;
+      width: 100px;
+      height: auto;
+      border-radius: 50%;
+      box-shadow: 0 0 10px rgba(0,0,0,0.3);
+      z-index: 1000;
+    }
+
+    .search-container {
+      padding: 20px;
       text-align: center;
-      padding: 1.5rem;
-      background: rgba(0,0,0,0.8);
-      color: white;
     }
-    
-    @media (max-width: 768px) {
-      .header h1 {
-        font-size: 1.5rem;
+
+    .search-container input {
+      width: 80%;
+      padding: 10px;
+      font-size: 16px;
+      border: 1px solid #ccc;
+      border-radius: 8px;
+    }
+
+    .thoughts {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 20px;
+      padding: 20px;
+    }
+
+    .card {
+      background: white;
+      padding: 20px;
+      max-width: 300px;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+      border-radius: 10px;
+    }
+
+    .about {
+      padding: 30px;
+      background: #fff;
+      text-align: center;
+    }
+
+    footer {
+      background-color: #3c3c9e;
+      color: white;
+      text-align: center;
+      padding: 15px;
+      margin-top: 40px;
+    }
+
+    @media screen and (max-width: 600px) {
+      .thoughts {
+        flex-direction: column;
+        align-items: center;
+      }
+
+      .navbar {
+        flex-direction: column;
+      }
+
+      .search-container input {
+        width: 95%;
+      }
+
+      .krishna-side-img {
+        width: 70px;
       }
       
-      .content-overlay {
-        padding: 1rem;
-      }
-      
-      .section {
-        padding: 1.5rem;
+      .slider {
+        height: 250px;
       }
     }
   </style>
 </head>
+
 <body>
 
-  <div class="hero-image">
-    <header class="header">
-      <h1>Brahmacharya Path</h1>
-      <div class="domain">amit8656.github.io</div>
-    </header>
+  <!-- Navbar -->
+  <nav class="navbar">
+    <h1>Brahmacharya Path</h1>
+    <ul>
+      <li><a href="#">Home</a></li>
+      <li><a href="#vichar">विचार</a></li>
+      <li><a href="#about">About</a></li>
+    </ul>
+  </nav>
 
-    <div class="content-overlay">
-      <div class="container">
-        <section class="section">
-          <h2>About Brahmacharya Path</h2>
-          <ul class="points-list">
-            <li>ब्रह्मचर्य के मूल सिद्धांत</li>
-            <li>मन एवं इंद्रियों का नियंत्रण</li>
-            <li>योग एवं ध्यान की विधियाँ</li>
-            <li>सात्विक आहार के नियम</li>
-            <li>दैनिक अनुशासन की पद्धति</li>
-          </ul>
-        </section>
-      </div>
-    </div>
-
-    <footer class="footer">
-      © 2025 Brahmacharya Path | Designed by Amit
-    </footer>
+  <!-- Image Slider with your 5 GitHub images -->
+  <div class="slider">
+    <img src="https://raw.githubusercontent.com/Amit8656/brahmacharyapath/main/images/IMG_20250620_095335.jpg" class="slide active" alt="Krishna 1">
+    <img src="https://raw.githubusercontent.com/Amit8656/brahmacharyapath/main/images/IMG_20250620_095319.jpg" class="slide" alt="Krishna 2">
+    <img src="https://raw.githubusercontent.com/Amit8656/brahmacharyapath/main/images/IMG_20250620_095256.jpg" class="slide" alt="Krishna 3">
+    <img src="https://raw.githubusercontent.com/Amit8656/brahmacharyapath/main/images/IMG_20250620_095205.jpg" class="slide" alt="Krishna 4">
+    <img src="https://raw.githubusercontent.com/Amit8656/brahmacharyapath/main/images/IMG_20250620_095114.jpg" class="slide" alt="Krishna 5">
   </div>
+
+  <!-- Search Box -->
+  <div class="search-container">
+    <input type="text" id="searchBox" placeholder="श्रीकृष्ण के विचार खोजें...">
+  </div>
+
+  <!-- Thoughts Section -->
+  <section id="vichar" class="thoughts">
+    <div class="card">
+      <h3>श्रीकृष्ण वाणी</h3>
+      <p>जो हुआ अच्छा हुआ, जो हो रहा है अच्छा हो रहा है, जो होगा वह भी अच्छा होगा।</p>
+    </div>
+    <div class="card">
+      <h3>कर्म और फल</h3>
+      <p>कर्म करो, फल की चिंता मत करो। यही गीता का सार है।</p>
+    </div>
+    <div class="card">
+      <h3>मन का नियंत्रण</h3>
+      <p>मनुष्य स्वयं अपना मित्र है और स्वयं ही अपना शत्रु।</p>
+    </div>
+  </section>
+
+  <!-- About -->
+  <section id="about" class="about">
+    <h2>About Brahmacharya Path</h2>
+    <p>यह वेबसाइट ब्रह्मचर्य, श्रीकृष्ण वाणी, और प्रेरणात्मक विचारों को समर्पित है।</p>
+  </section>
+
+  <!-- Footer -->
+  <footer>
+    <p>&copy; 2025 Brahmacharya Path | Designed by Amit</p>
+  </footer>
+
+  <!-- Krishna side image -->
+  <img class="krishna-side-img" src="images/krishna-small.jpg" alt="Shree Krishna">
+
+  <!-- JS for Slider & Search -->
+  <script>
+    // Slider functionality
+    let currentSlide = 0;
+    const slides = document.querySelectorAll('.slide');
+    
+    function showSlide(n) {
+      slides.forEach(slide => slide.classList.remove('active'));
+      slides[n].classList.add('active');
+    }
+    
+    function nextSlide() {
+      currentSlide = (currentSlide + 1) % slides.length;
+      showSlide(currentSlide);
+    }
+    
+    // Auto-rotate slides every 3 seconds
+    setInterval(nextSlide, 3000);
+    
+    // Search functionality
+    document.getElementById("searchBox").addEventListener("input", function () {
+      const query = this.value.toLowerCase();
+      const cards = document.querySelectorAll(".card");
+      cards.forEach(card => {
+        const text = card.innerText.toLowerCase();
+        card.style.display = text.includes(query) ? "block" : "none";
+      });
+    });
+  </script>
 
 </body>
 </html>
