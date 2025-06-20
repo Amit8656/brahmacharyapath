@@ -4,6 +4,7 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Brahmacharya Path</title>
+
   <style>
     body {
       font-family: 'Segoe UI', sans-serif;
@@ -33,26 +34,20 @@
       text-decoration: none;
     }
 
-    /* Improved Slider CSS */
+    /* ✅ Slider for 1500x1500 square images */
     .slider {
-  width: 100%;
-  max-width: 1500px;
-  max-height: 1500px;
-  margin: 0 auto;
-  background: #000;
-  overflow: hidden;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
+      width: 100%;
+      max-width: 1500px;
+      margin: 0 auto;
+      background: #000;
+      text-align: center;
+      overflow: hidden;
+    }
 
-.slider img {
-  width: auto;
-  height: auto;
-  max-width: 100%;
-  max-height: 100%;
-  display: none;
-}
+    .slider img {
+      max-width: 100%;
+      max-height: 100%;
+      display: none;
     }
 
     .krishna-side-img {
@@ -126,10 +121,6 @@
       .krishna-side-img {
         width: 70px;
       }
-      
-      .slider {
-        height: 250px;
-      }
     }
   </style>
 </head>
@@ -146,13 +137,13 @@
     </ul>
   </nav>
 
-  <!-- Image Slider with your 5 GitHub images -->
+  <!-- ✅ Slider with 5 new images (square support) -->
   <div class="slider">
-    <img src="https://raw.githubusercontent.com/Amit8656/brahmacharyapath/main/images/IMG_20250620_095335.jpg" class="slide active" alt="Krishna 1">
-    <img src="https://raw.githubusercontent.com/Amit8656/brahmacharyapath/main/images/IMG_20250620_095319.jpg" class="slide" alt="Krishna 2">
-    <img src="https://raw.githubusercontent.com/Amit8656/brahmacharyapath/main/images/IMG_20250620_095256.jpg" class="slide" alt="Krishna 3">
-    <img src="https://raw.githubusercontent.com/Amit8656/brahmacharyapath/main/images/IMG_20250620_095205.jpg" class="slide" alt="Krishna 4">
-    <img src="https://raw.githubusercontent.com/Amit8656/brahmacharyapath/main/images/IMG_20250620_095114.jpg" class="slide" alt="Krishna 5">
+    <img src="https://raw.githubusercontent.com/Amit8656/brahmacharyapath/refs/heads/main/images/IMG_20250620_095335.jpg" class="slide" alt="Krishna 1">
+    <img src="https://raw.githubusercontent.com/Amit8656/brahmacharyapath/refs/heads/main/images/IMG_20250620_095319.jpg" class="slide" alt="Krishna 2">
+    <img src="https://raw.githubusercontent.com/Amit8656/brahmacharyapath/refs/heads/main/images/IMG_20250620_095256.jpg" class="slide" alt="Krishna 3">
+    <img src="https://raw.githubusercontent.com/Amit8656/brahmacharyapath/refs/heads/main/images/IMG_20250620_095205.jpg" class="slide" alt="Krishna 4">
+    <img src="https://raw.githubusercontent.com/Amit8656/brahmacharyapath/refs/heads/main/images/IMG_20250620_095114.jpg" class="slide" alt="Krishna 5">
   </div>
 
   <!-- Search Box -->
@@ -192,24 +183,19 @@
 
   <!-- JS for Slider & Search -->
   <script>
-    // Slider functionality
-    let currentSlide = 0;
-    const slides = document.querySelectorAll('.slide');
-    
-    function showSlide(n) {
-      slides.forEach(slide => slide.classList.remove('active'));
-      slides[n].classList.add('active');
-    }
-    
-    function nextSlide() {
-      currentSlide = (currentSlide + 1) % slides.length;
-      showSlide(currentSlide);
-    }
-    
-    // Auto-rotate slides every 3 seconds
-    setInterval(nextSlide, 3000);
-    
-    // Search functionality
+    window.addEventListener('DOMContentLoaded', () => {
+      const slides = document.querySelectorAll('.slide');
+      let index = 0;
+      slides.forEach((s, i) => s.style.display = i === 0 ? 'block' : 'none');
+
+      setInterval(() => {
+        slides.forEach((s, i) => {
+          s.style.display = (i === index) ? 'block' : 'none';
+        });
+        index = (index + 1) % slides.length;
+      }, 3000);
+    });
+
     document.getElementById("searchBox").addEventListener("input", function () {
       const query = this.value.toLowerCase();
       const cards = document.querySelectorAll(".card");
