@@ -1,168 +1,47 @@
-<!DOCTYPE html><html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Brahmacharya Path</title>
-  <style>
-    body {
-      margin: 0;
-      font-family: 'Segoe UI', sans-serif;
-      background: #f9f9f9;
-      color: #222;
-    }
-    nav {
-      background: #282c34;
-      padding: 10px 20px;
-      display: flex;
-      justify-content: space-around;
-      align-items: center;
-      flex-wrap: wrap;
-    }
-    nav a {
-      color: #fff;
-      text-decoration: none;
-      font-weight: bold;
-      padding: 8px 10px;
-      cursor: pointer;
-    }
-    header {
-      background: linear-gradient(#4c5c6c, #1c1f26);
-      color: #fff;
-      padding: 50px 20px;
-      text-align: center;
-    }
-    .featured {
-      display: flex;
-      flex-wrap: wrap;
-      justify-content: center;
-      padding: 20px;
-      gap: 20px;
-    }
-    .post {
-      background: #fff;
-      border-radius: 10px;
-      box-shadow: 0 0 10px rgba(0,0,0,0.1);
-      width: 300px;
-      padding: 15px;
-    }
-    .post img {
-      width: 100%;
-      height: 180px;
-      object-fit: cover;
-      border-radius: 10px;
-    }
-    .post h3 {
-      margin: 10px 0 5px;
-    }
-    .post p {
-      font-size: 14px;
-    }
-    aside {
-      position: fixed;
-      top: 100px;
-      left: 10px;
-    }
-    aside img {
-      width: 60px;
-    }
-    footer {
-      background: #282c34;
-      color: #ccc;
-      text-align: center;
-      padding: 20px;
-    }
-    section.info {
-      background: #fff;
-      padding: 30px;
-      text-align: center;
-    }
-    .tab-content {
-      display: none;
-      padding: 20px;
-      background: #fff;
-      margin: 20px;
-      border-radius: 10px;
-      box-shadow: 0 0 10px rgba(0,0,0,0.05);
-    }
-    .tab-content.active {
-      display: block;
-    }
-  </style>
-  <script>
-    function showTab(id) {
-      const tabs = document.querySelectorAll('.tab-content');
-      tabs.forEach(tab => tab.classList.remove('active'));
-      document.getElementById(id).classList.add('active');
-    }
-  </script>
-</head>
-<body>
-  <nav>
-    <a onclick="showTab('home')">🏠 Home</a>
-    <a onclick="showTab('discipline')">🧘 Discipline | अनुशासन</a>
-    <a onclick="showTab('energy')">⚡ Energy | ऊर्जा</a>
-    <a onclick="showTab('mastery')">🧠 Self Mastery | आत्म-नियंत्रण</a>
-    <a onclick="showTab('rules')">📜 Rules | नियम</a>
-    <a onclick="showTab('routine')">📅 Routine | दिनचर्या</a>
-    <a onclick="showTab('contact')">📩 Contact</a>
-  </nav>  <header>
-    <h1>Brahmacharya Path</h1>
-    <p>A journey towards discipline, self-mastery and divine energy | अनुशासन और आत्मबल का दिव्य पथ</p>
-  </header>  <aside>
-    <img src="https://upload.wikimedia.org/wikipedia/commons/8/83/Om_symbol.png" alt="Om Symbol">
-  </aside>  <section class="tab-content active" id="home">
-    <div class="featured">
-      <div class="post">
-        <img src="https://i.imgur.com/sxYw8JN.jpg" alt="Krishna">
-        <h3>Shree Krishna: Duty First</h3>
-        <p>"Do your duty without attachment to results."<br>
-        "कर्तव्य करते रहो, फल की चिंता मत करो।"<br>
-        Krishna teaches that selfless action leads to spiritual growth.</p>
-      </div>
-      <div class="post">
-        <img src="https://i.imgur.com/HeH4rke.jpg" alt="Krishna">
-        <h3>Self Control & Balance</h3>
-        <p>"A yogi is one who maintains balance in pleasure and pain."<br>
-        "योगी वह है जो सुख-दुख में समान रहता है।"<br>
-        Real strength lies in equanimity.</p>
-      </div>
-      <div class="post">
-        <img src="https://i.imgur.com/CplCKpA.jpg" alt="Krishna">
-        <h3>Desire Management</h3>
-        <p>"Desire is the root of sorrow."<br>
-        "इच्छा ही दुःख का कारण है।"<br>
-        Brahmacharya begins with mastering desires.</p>
-      </div>
-      <div class="post">
-        <img src="https://i.imgur.com/7Uk4z4Z.jpg" alt="Krishna">
-        <h3>Mind over Senses</h3>
-        <p>"Elevate the mind to govern the senses."<br>
-        "मन को इन्द्रियों से ऊपर रखो।"<br>
-        Krishna’s wisdom inspires true self-mastery.</p>
-      </div>
-      <div class="post">
-        <img src="https://i.imgur.com/wc6ubZP.jpg" alt="Krishna">
-        <h3>Action in Devotion</h3>
-        <p>"Whatever you do, offer it to me."<br>
-        "जो कुछ भी करो, मुझे अर्पित करो।"<br>
-        Make your life a spiritual offering.</p>
-      </div>
+<section id="krishna-thoughts" class="content-section">
+  <h2>श्रीकृष्ण के दिव्य विचार | Divine Teachings of Shri Krishna</h2>
+
+  <div class="krishna-gallery">
+
+    <!-- Image 1 -->
+    <div class="krishna-card">
+      <img src="images/krishna1.jpg" alt="Krishna playing flute in forest">
+      <p><strong>Prompt:</strong> Krishna playing flute in a peaceful forest, surrounded by cows and flowers, divine aura</p>
+      <p>शांति और भक्ति का प्रतीक हैं श्रीकृष्ण। बाँसुरी की मधुर ध्वनि हमारे मन को शुद्ध करती है।  
+      <br><em>Krishna's flute resonates with peace and devotion in the forest of Vrindavan.</em></p>
     </div>
-  </section>  <!-- Tab content sections copied from earlier response -->  <section class="tab-content" id="discipline">[...discipline content...]</section>
-  <section class="tab-content" id="energy">[...energy content...]</section>
-  <section class="tab-content" id="mastery">[...self mastery content...]</section>
-  <section class="tab-content" id="rules">[...rules content...]</section>
-  <section class="tab-content" id="routine">[...routine content...]</section>
-  <section class="tab-content" id="contact">
-    <h2>📩 Contact</h2>
-    <p>Have questions or suggestions? Email us at <strong>brahmacharyapath@gmail.com</strong></p>
-  </section>  <section class="info">
-    <h2>About Us</h2>
-    <p>Brahmacharya Path is a spiritual lifestyle initiative to help seekers discover inner strength through discipline, energy control and ancient wisdom. We aim to guide youth toward higher consciousness, purity, and purpose.<br>
-    ब्रह्मचर्य पथ एक आध्यात्मिक जीवन शैली है, जो आत्मबल, अनुशासन और वैदिक ज्ञान से युक्त जीवन की ओर प्रेरित करती है।</p>
-  </section>  <footer>
-    <p>🌐 Follow us: YouTube | Instagram | Facebook</p>
-    <p>&copy; 2025 Brahmacharya Path. All Rights Reserved.</p>
-  </footer>
-</body>
-</html>
+
+    <!-- Image 2 -->
+    <div class="krishna-card">
+      <img src="images/krishna2.jpg" alt="Krishna sitting on lotus playing flute">
+      <p><strong>Prompt:</strong> Krishna sitting on a lotus, playing flute, divine glow, spiritual energy</p>
+      <p>कमल पर स्थित कृष्ण आत्म-शुद्धि और ध्यान का प्रतीक हैं।  
+      <br><em>Seated on a lotus, Krishna symbolizes inner purity and meditation.</em></p>
+    </div>
+
+    <!-- Image 3 -->
+    <div class="krishna-card">
+      <img src="images/krishna3.jpg" alt="Young Krishna smiling with flute">
+      <p><strong>Prompt:</strong> Young Krishna smiling peacefully, flute in hand, natural glowing background</p>
+      <p>मुस्कान में छुपी है आत्मिक ऊर्जा।  
+      <br><em>Krishna's divine smile reflects calmness and inner strength.</em></p>
+    </div>
+
+    <!-- Image 4 -->
+    <div class="krishna-card">
+      <img src="images/krishna4.jpg" alt="Krishna meditating with flute">
+      <p><strong>Prompt:</strong> Krishna meditating, golden background, spiritual glow, eyes closed in deep thought</p>
+      <p>ध्यान ही आत्म-संयम की कुंजी है।  
+      <br><em>Krishna's serene posture teaches self-mastery through meditation.</em></p>
+    </div>
+
+    <!-- Image 5 -->
+    <div class="krishna-card">
+      <img src="images/krishna5.jpg" alt="Krishna holding pot and flute">
+      <p><strong>Prompt:</strong> Krishna holding a butter pot and flute, standing over water and lotus, spiritual scene</p>
+      <p>कृष्ण जीवन के आनंद और संतुलन का संदेश देते हैं।  
+      <br><em>He teaches us the joy of balance and simplicity in life.</em></p>
+    </div>
+
+  </div>
+</section>
